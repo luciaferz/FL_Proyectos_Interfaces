@@ -18,11 +18,12 @@
 :root {
   /* Paleta cromática del prototipo Figma */
   --bg-page: #eaf0f4;               /* Fondo gris-azul hielo */
-  --bg-header: #1d425e;             /* Azul pizarra oscuro */
-  --bg-footer: #1d425e;             /* Azul pizarra oscuro */
+  --bg-header: #234a68;             /* Azul oscuro del prototipo */
+  --bg-footer: #234a68;             /* Azul oscuro del prototipo */
   --color-burgundy: #a33e3e;        /* Granate oscuro títulos de sección */
   --color-steel-blue: #4f7b9b;      /* Azul acero para texto secundario */
-  --color-text-dark: #2b303a;       /* Texto general gris oscuro */
+  --color-text-dark: #1e2428;       /* Texto general */
+  --color-text-blue: #234a68;       /* Textos resaltados */
   --color-cream-header: #f7f4ee;    /* Color crema para cabecera y footer */
   --color-module-pill: #69a0c3;     /* Azul de tarjetas de módulos */
   --color-cream-card: #f7f4ee;      /* Fondo crema tarjetas de favicon */
@@ -61,7 +62,7 @@ body {
 }
 
 .header-container {
-  max-width: 1560px; /* Expandido para pantallas anchas */
+  max-width: 1800px; /* Aprovecha mejor el ancho del prototipo */
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -128,15 +129,15 @@ body {
 /* Main Container Expandido */
 main {
   flex: 1;
-  max-width: 1560px; /* Expandido para aprovechar el ancho total */
+  max-width: 1800px; /* Aprovecha mejor el ancho disponible */
   width: 100%;
   margin: 0 auto;
-  padding: 3rem 2.5rem 5rem 2.5rem;
+  padding: 3rem 3.5rem 5rem 3.5rem;
 }
 
 /* Banner de Encabezado */
 .page-badge-section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 /* Títulos — Beau — 40 px */
@@ -145,7 +146,7 @@ main {
   font-size: 44px;
   color: var(--bg-header);
   font-weight: 400;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
@@ -178,6 +179,7 @@ main {
   color: var(--color-steel-blue);
   font-weight: 400;
   line-height: 1.4;
+  margin-top: 0.25rem;
 }
 
 /* Texto general — Gravidis Regular — 18 px (Sin negritas) */
@@ -187,6 +189,15 @@ p, li, span, td, div, .text-general {
   font-weight: 400;
   line-height: 1.65;
   color: var(--color-text-dark);
+}
+
+/* Medida base del texto del prototipo */
+p, li, .text-general {
+  font-size: 18px;
+}
+
+.highlight-text {
+  color: #234a68 !important;
 }
 
 strong, b {
@@ -237,7 +248,7 @@ a {
 }
 
 .footer-container {
-  max-width: 1560px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -253,7 +264,7 @@ a {
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4.5rem; /* Mayor separación entre columnas */
+  gap: 3.5rem; /* Separación equilibrada entre columnas */
   align-items: start;
   margin-bottom: 4.5rem;
 }

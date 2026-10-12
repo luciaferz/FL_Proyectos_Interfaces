@@ -12,6 +12,15 @@
   color: var(--color-text-dark);
 }
 
+/* Textos señalados en el prototipo */
+.experience-section .about-text {
+  color: var(--color-text-dark);
+}
+
+.experience-section .about-text p {
+  color: var(--color-text-dark);
+}
+
 .image-card {
   width: 100%;
   border-radius: var(--border-radius);
@@ -22,10 +31,17 @@
 
 .image-card img {
   width: 100%;
-  height: auto;
-  max-height: 520px;
+  height: 400px;
+  max-height: 400px;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 950px) {
+  .image-card img {
+    height: auto;
+    max-height: 520px;
+  }
 }
 
 /* Sección Favicon Expandida */

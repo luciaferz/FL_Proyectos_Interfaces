@@ -30,6 +30,17 @@
   gap: 0.75rem;
   margin-bottom: 2rem;
   font-size: 18px;
+  color: var(--color-text-blue);
+}
+
+.centro-section p,
+.localizacion-section p,
+.servicios-entorno-section p,
+.instalaciones-section p,
+.contact-info,
+.contact-info span,
+.transport-section,
+.transport-section p {
   color: var(--color-text-dark);
 }
 
@@ -40,8 +51,63 @@
 }
 
 .contact-link {
-  color: var(--color-text-dark);
+  color: var(--color-text-blue);
   text-decoration: underline; /* Subrayado para los enlaces de contacto */
+}
+
+/* Resaltados concretos de la página Centro */
+.servicios-entorno-section > .two-columns > div:first-child .centro-list li:last-child,
+.servicios-entorno-section > .two-columns > div:nth-child(2) p:first-of-type,
+.servicios-entorno-section > .two-columns > div:nth-child(2) p:nth-of-type(2),
+.instalaciones-left p:nth-child(1),
+.instalaciones-left p:nth-child(2) {
+  color: var(--color-text-dark);
+}
+
+.contact-info p,
+.contact-info p .contact-link,
+.transport-section .centro-list li {
+  color: var(--color-text-dark);
+}
+
+.contact-info .contact-label,
+.transport-title,
+.transport-subhead {
+  color: var(--color-text-blue);
+}
+
+
+.transport-section .centro-list li:last-child {
+  color: var(--color-text-dark);
+}
+
+.map-card {
+  width: 100%;
+  min-height: 380px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.localizacion-section .two-columns {
+  align-items: center;
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 380px;
+  border: 0;
+}
+
+/* Imágenes de la página Centro: formato horizontal y proporcionado */
+.centro-section .image-card img,
+.servicios-entorno-section .image-card img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
 /* Bloque Cómo llegar */
@@ -78,7 +144,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4.5rem;
-  align-items: start;
+  align-items: center;
   margin-top: 2rem;
 }
 
@@ -92,14 +158,55 @@
   display: flex;
   flex-direction: column;
   gap: 2.75rem;
+  align-self: center;
+  padding-top: 2rem;
+}
+
+.instalaciones-right > div:last-child {
+  transform: none;
 }
 
 .facility-img {
   width: 100%;
-  height: 340px;
+  height: 320px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.instalaciones-left .facility-img,
+.instalaciones-right .facility-img {
+  height: 320px;
+  aspect-ratio: 4 / 3;
+}
+
+.instalaciones-left > div,
+.instalaciones-right > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.instalaciones-left .facility-title,
+.instalaciones-right .facility-title {
+  min-height: 48px;
+}
+
+@media (max-width: 950px) {
+  .facility-img {
+    height: auto;
+    max-height: 420px;
+  }
+
+  .centro-section .image-card img,
+  .servicios-entorno-section .image-card img {
+    height: auto;
+    max-height: 420px;
+  }
+
+  .instalaciones-right {
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 950px) {

@@ -6,6 +6,11 @@
   gap: 4.5rem;
 }
 
+.estudios-section p,
+.estudios-section li {
+  color: var(--color-text-dark);
+}
+
 .periodismo-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -93,13 +98,17 @@
 
 .module-card {
   background-color: var(--color-module-pill);
-  color: #1d425e;
+  color: var(--color-text-blue);
   padding: 1rem 1.5rem;
   border-radius: 8px;
   font-family: var(--font-beau);
   font-size: 24px;
   font-weight: 400;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.skill-category .periodismo-col-list li:first-child {
+  color: var(--color-text-dark);
 }
 
 /* Sección Proyectos */
@@ -118,6 +127,17 @@
   flex-direction: column;
   gap: 0.65rem;
   margin-bottom: 1.25rem;
+}
+
+.demo-credentials {
+  list-style: disc;
+  margin: 0 0 0.75rem 1.25rem;
+  display: block;
+}
+
+.demo-credentials li {
+  padding-left: 0;
+  color: var(--color-text-dark);
 }
 
 .project-info li {
@@ -139,8 +159,16 @@
   border-radius: var(--border-radius);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   object-fit: cover;
-  max-height: 480px;
+  height: 400px;
+  max-height: 400px;
   transition: transform 0.2s ease;
+}
+
+@media (max-width: 950px) {
+  .project-preview-img {
+    height: auto;
+    max-height: 480px;
+  }
 }
 
 .project-preview-img:hover {

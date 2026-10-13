@@ -98,7 +98,7 @@
 
 .module-card {
   background-color: var(--color-module-pill);
-  color: var(--color-text-blue);
+  color: #f7f4ee;
   padding: 1rem 1.5rem;
   border-radius: 8px;
   font-family: var(--font-beau);

@@ -17,15 +17,15 @@
 
 :root {
   /* Paleta cromática del prototipo Figma */
-  --bg-page: #eaf0f4;               /* Fondo gris-azul hielo */
+  --bg-page: #e8f1f5;               /* Fondo del prototipo */
   --bg-header: #234a68;             /* Azul oscuro del prototipo */
   --bg-footer: #234a68;             /* Azul oscuro del prototipo */
   --color-burgundy: #a33e3e;        /* Granate oscuro títulos de sección */
-  --color-steel-blue: #4f7b9b;      /* Azul acero para texto secundario */
+  --color-steel-blue: #6aa1c2;      /* Frases bajo los títulos */
   --color-text-dark: #1e2428;       /* Texto general */
-  --color-text-blue: #234a68;       /* Textos resaltados */
+  --color-text-blue: #1272a8;       /* Textos destacados */
   --color-cream-header: #f7f4ee;    /* Color crema para cabecera y footer */
-  --color-module-pill: #69a0c3;     /* Azul de tarjetas de módulos */
+  --color-module-pill: #1272a8;     /* Fondo de las cajas del grid */
   --color-cream-card: #f7f4ee;      /* Fondo crema tarjetas de favicon */
   
   --font-beau: 'Beau', 'Playfair Display', Georgia, serif;
@@ -176,7 +176,7 @@ main {
 .section-subtitle, .lead-phrase, .project-subtitle-beau {
   font-family: var(--font-beau);
   font-size: 28px;
-  color: var(--color-steel-blue);
+  color: #1272a8;
   font-weight: 400;
   line-height: 1.4;
   margin-top: 0.25rem;
@@ -197,7 +197,7 @@ p, li, .text-general {
 }
 
 .highlight-text {
-  color: #234a68 !important;
+  color: #1272a8 !important;
 }
 
 strong, b {

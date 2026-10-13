@@ -102,6 +102,10 @@
 }
 
 /* Imágenes de la página Centro: formato horizontal y proporcionado */
+.instalaciones-section .facility-title {
+  color: #234a68;
+}
+
 .centro-section .image-card img,
 .servicios-entorno-section .image-card img {
   display: block;

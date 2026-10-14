@@ -116,9 +116,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4.5rem;
-  align-items: start;
+  align-items: center;
   margin-top: 2rem;
   margin-bottom: 4.5rem;
+}
+
+.project-card > .image-card {
+  align-self: center;
 }
 
 .project-info ul {
@@ -158,16 +162,16 @@
   width: 100%;
   border-radius: var(--border-radius);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-  height: 400px;
-  max-height: 400px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
   transition: transform 0.2s ease;
 }
 
 @media (max-width: 950px) {
   .project-preview-img {
     height: auto;
-    max-height: 480px;
+    max-height: none;
   }
 }
 

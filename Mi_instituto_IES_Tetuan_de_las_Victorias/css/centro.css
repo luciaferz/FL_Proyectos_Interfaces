@@ -148,7 +148,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4.5rem;
-  align-items: center;
+  align-items: start;
   margin-top: 2rem;
 }
 
@@ -162,27 +162,29 @@
   display: flex;
   flex-direction: column;
   gap: 2.75rem;
-  align-self: center;
-  padding-top: 2rem;
+  align-self: start;
+  padding-top: 0;
 }
 
 .instalaciones-right > div:last-child {
   transform: none;
+  margin-top: 0;
 }
 
 .facility-img {
   width: 100%;
-  height: 320px;
-  aspect-ratio: 4 / 3;
+  height: 360px;
+  max-height: 360px;
   object-fit: cover;
+  background-color: transparent;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .instalaciones-left .facility-img,
 .instalaciones-right .facility-img {
-  height: 320px;
-  aspect-ratio: 4 / 3;
+  height: 360px;
+  max-height: 360px;
 }
 
 .instalaciones-left > div,
@@ -210,6 +212,10 @@
 
   .instalaciones-right {
     padding-top: 0;
+  }
+
+  .instalaciones-right > div:last-child {
+    margin-top: 0;
   }
 }
 

@@ -7,12 +7,18 @@
 
 @font-face {
   font-family: 'Beau';
-  src: local('Beau'), local('Playfair Display'), Georgia, serif;
+  src: url('../fonts/BeauRegular-0nLo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gravidis Regular';
-  src: local('Gravidis Regular'), local('Gravidis'), local('Inter'), sans-serif;
+  font-family: 'Gravidis';
+  src: url('../fonts/GradvisRegular-lxoyd.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -29,7 +35,7 @@
   --color-cream-card: #f7f4ee;      /* Fondo crema tarjetas de favicon */
   
   --font-beau: 'Beau', 'Playfair Display', Georgia, serif;
-  --font-gravidis: 'Gravidis Regular', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-gravidis: 'Gravidis', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * {

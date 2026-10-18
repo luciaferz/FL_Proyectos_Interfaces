@@ -46,6 +46,8 @@
   font-family: var(--font-beau);
   font-size: 36px;
   font-weight: 400;
+  /* Transición CSS: cambia progresivamente el color del enlace al pasar
+     el cursor sobre el título del proyecto. */
   transition: color 0.2s ease;
 }
 
@@ -84,6 +86,7 @@
 }
 
 .modules-container {
+  /* La página de estudios utiliza CSS Grid para organizar sus contenidos. */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -165,14 +168,9 @@
   height: auto;
   max-height: none;
   object-fit: contain;
+  /* Animación CSS: amplía ligeramente la imagen al pasar el cursor para
+     indicar que la previsualización es interactiva. */
   transition: transform 0.2s ease;
-}
-
-@media (max-width: 950px) {
-  .project-preview-img {
-    height: auto;
-    max-height: none;
-  }
 }
 
 .project-preview-img:hover {

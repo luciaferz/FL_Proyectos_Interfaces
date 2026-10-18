@@ -145,6 +145,7 @@
 }
 
 .instalaciones-grid {
+  /* La página del centro utiliza Flexbox para organizar sus contenidos. */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4.5rem;
@@ -168,7 +169,7 @@
 
 .instalaciones-right > div:last-child {
   transform: none;
-  margin-top: 0;
+  margin-top: -0.5rem;
 }
 
 .facility-img {

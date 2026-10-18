@@ -1,7 +1,4 @@
-/* 
-   Estilos Fieles al Prototipo Figma - Layout Expandido
-   IES Tetuán de las Victorias - Lucía Fernández Lozano
-*/
+/* Estilos Generales del Prototipo Figma*/
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
 
@@ -56,7 +53,7 @@ body {
   flex-direction: column;
 }
 
-/* Header & Navegación Sticky Expandida */
+/* Header / Navegación */
 .site-header {
   background-color: var(--bg-header);
   color: #ffffff;
@@ -122,6 +119,8 @@ body {
   font-family: var(--font-beau);
   font-size: 26px;
   font-weight: 400;
+  /* Transición CSS: suaviza cualquier cambio de opacidad al interactuar
+     con los enlaces del menú. No utiliza JavaScript. */
   transition: opacity 0.2s ease;
 }
 
@@ -197,11 +196,6 @@ p, li, span, td, div, .text-general {
   color: var(--color-text-dark);
 }
 
-/* Medida base del texto del prototipo */
-p, li, .text-general {
-  font-size: 18px;
-}
-
 .highlight-text {
   color: #1272a8 !important;
 }
@@ -214,8 +208,8 @@ a {
   text-decoration: none;
 }
 
-/* Botones — Beau — 28 px */
 .cta-container {
+  /* Botón de navegación hacia otra sección del sitio. */
   display: flex;
   justify-content: flex-end;
   margin-top: 4.5rem;
@@ -236,6 +230,8 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  /* Animación CSS del botón: suaviza el cambio de fondo y el pequeño
+     desplazamiento vertical cuando el usuario pasa el cursor. */
   transition: background-color 0.2s ease, transform 0.1s ease;
   box-shadow: 0 4px 10px rgba(29, 66, 94, 0.2);
 }
@@ -266,7 +262,7 @@ a {
   color: var(--color-cream-header);
 }
 
-/* Grillas genéricas dos columnas expandidas */
+/* Distribución general del contenido en dos columnas */
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -278,12 +274,14 @@ a {
 /* Responsive */
 @media (max-width: 950px) {
   .header-container {
+    /* En pantallas estrechas, Flexbox apila la cabecera en vertical. */
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
   }
 
   .two-columns {
+    /* CSS Grid cambia a una sola columna para adaptar el contenido al móvil. */
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
@@ -305,6 +303,7 @@ a {
   }
 
   .cta-container {
+    /* Flexbox centra el botón en pantallas estrechas. */
     justify-content: center;
   }
 }

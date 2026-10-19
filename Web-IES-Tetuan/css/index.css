@@ -1,47 +1,23 @@
 /* Estilos específicos para la página de Inicio / Experiencia (index.html) */
 
-.experience-section {
-  background-color: transparent;
-}
-
 .about-text {
+  /* Flexbox apila el texto y controla el espacio entre sus párrafos. */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  font-size: 18px;
-  color: var(--color-text-dark);
-}
-
-/* Textos señalados en el prototipo */
-.experience-section .about-text {
-  color: var(--color-text-dark);
-}
-
-.experience-section .about-text p {
-  color: var(--color-text-dark);
 }
 
 .image-card {
   width: 100%;
-  border-radius: var(--border-radius);
-  overflow: hidden;
+  min-width: 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
 }
 
 .image-card img {
-  width: 100%;
-  height: 400px;
-  max-height: 400px;
-  object-fit: cover;
   display: block;
-}
-
-@media (max-width: 950px) {
-  .image-card img {
-    height: auto;
-    max-height: 520px;
-  }
+  width: 100%;
+  height: auto;
 }
 
 /* Sección Favicon Expandida */
@@ -50,10 +26,12 @@
 }
 
 .favicon-visual-col {
+  /* Columna flexible para la vista principal y las previsualizaciones del favicon. */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  min-width: 0;
 }
 
 /* Tarjeta Principal Favicon */
@@ -63,6 +41,7 @@
   aspect-ratio: 1 / 1;
   background-color: var(--color-cream-card);
   border-radius: 36px;
+  /* Flexbox centra el icono dentro de la tarjeta cuadrada. */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,17 +57,20 @@
 
 /* Fila de previsualización en distintos tamaños */
 .favicon-sizes-row {
+  /* Flexbox coloca las muestras en una fila y las alinea por la base. */
   display: flex;
   align-items: flex-end;
   justify-content: center;
   gap: 2.5rem;
   width: 100%;
   max-width: 480px;
+  min-width: 0;
 }
 
 .favicon-size-box {
   background-color: var(--color-cream-card);
   border-radius: 18px;
+  /* Centra cada imagen de muestra dentro de su caja. */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,7 +100,33 @@
   object-fit: contain;
 }
 
+@media (max-width: 600px) {
+  .favicon-sizes-row {
+    gap: 0.75rem;
+  }
+
+  .favicon-size-box {
+    padding: 0.5rem;
+  }
+
+  .favicon-size-box.box-lg {
+    width: clamp(5rem, 21vw, 7.8125rem);
+    height: clamp(5rem, 21vw, 7.8125rem);
+  }
+
+  .favicon-size-box.box-md {
+    width: clamp(3.5rem, 14vw, 5.3125rem);
+    height: clamp(3.5rem, 14vw, 5.3125rem);
+  }
+
+  .favicon-size-box.box-sm {
+    width: clamp(2.5rem, 10vw, 3.75rem);
+    height: clamp(2.5rem, 10vw, 3.75rem);
+  }
+}
+
 .favicon-details {
+  /* Apila los detalles del favicon con una separación uniforme. */
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -134,17 +142,6 @@
   line-height: 1.3;
 }
 
-.favicon-detail-item p {
-  font-family: var(--font-gravidis);
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--color-text-dark);
-}
-
 .favicon-summary {
   margin-top: 0.75rem;
-  font-family: var(--font-gravidis);
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--color-text-dark);
 }

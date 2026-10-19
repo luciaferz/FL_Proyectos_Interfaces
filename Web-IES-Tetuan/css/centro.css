@@ -3,6 +3,7 @@
 .centro-list {
   list-style: none;
   margin: 1rem 0;
+  /* Flexbox organiza los elementos de la lista verticalmente. */
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -11,62 +12,29 @@
 .centro-list li {
   position: relative;
   padding-left: 1.5rem;
-  font-family: var(--font-gravidis);
-  font-size: 18px;
-  line-height: 1.65;
-  color: var(--color-text-dark);
 }
 
 .centro-list li::before {
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--color-text-dark);
 }
 
 .contact-info {
+  /* Agrupa los datos de contacto en una columna. */
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 2rem;
-  font-size: 18px;
-  color: var(--color-text-blue);
-}
-
-.centro-section p,
-.localizacion-section p,
-.servicios-entorno-section p,
-.instalaciones-section p,
-.contact-info,
-.contact-info span,
-.transport-section,
-.transport-section p {
-  color: var(--color-text-dark);
-}
-
-.contact-item {
-  display: flex;
-  gap: 0.5rem;
-  color: var(--color-text-dark);
 }
 
 .contact-link {
   color: var(--color-text-blue);
   text-decoration: underline; /* Subrayado para los enlaces de contacto */
+  overflow-wrap: anywhere;
 }
 
-/* Resaltados concretos de la página Centro */
-.servicios-entorno-section > .two-columns > div:first-child .centro-list li:last-child,
-.servicios-entorno-section > .two-columns > div:nth-child(2) p:first-of-type,
-.servicios-entorno-section > .two-columns > div:nth-child(2) p:nth-of-type(2),
-.instalaciones-left p:nth-child(1),
-.instalaciones-left p:nth-child(2) {
-  color: var(--color-text-dark);
-}
-
-.contact-info p,
-.contact-info p .contact-link,
-.transport-section .centro-list li {
+.contact-info p .contact-link {
   color: var(--color-text-dark);
 }
 
@@ -76,16 +44,10 @@
   color: var(--color-text-blue);
 }
 
-
-.transport-section .centro-list li:last-child {
-  color: var(--color-text-dark);
-}
-
 .map-card {
   width: 100%;
-  min-height: 380px;
+  height: clamp(16rem, 35vw, 23.75rem);
   overflow: hidden;
-  border-radius: var(--border-radius);
   background-color: #ffffff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
@@ -97,7 +59,7 @@
 .map-card iframe {
   display: block;
   width: 100%;
-  min-height: 380px;
+  height: 100%;
   border: 0;
 }
 
@@ -110,8 +72,7 @@
 .servicios-entorno-section .image-card img {
   display: block;
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  height: auto;
 }
 
 /* Bloque Cómo llegar */
@@ -120,24 +81,11 @@
 }
 
 .transport-title {
-  font-family: var(--font-gravidis);
-  font-size: 18px;
-  color: var(--color-text-dark);
   margin-bottom: 0.75rem;
 }
 
 .transport-subhead {
-  font-family: var(--font-gravidis);
-  font-size: 18px;
-  color: var(--color-text-dark);
   margin-top: 0.75rem;
-}
-
-.services-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 1.25rem;
 }
 
 .instalaciones-section {
@@ -145,84 +93,70 @@
 }
 
 .instalaciones-grid {
-  /* La página del centro utiliza Flexbox para organizar sus contenidos. */
+  /* Grid relaciona descripción, entrada e informática en filas compartidas. */
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4.5rem;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "description coworking"
+    "entrada informatica";
+  column-gap: 4.5rem;
+  row-gap: 2.75rem;
   margin-top: 2rem;
 }
 
-.instalaciones-left {
+.instalaciones-description {
+  grid-area: description;
+  /* Flexbox conserva la secuencia vertical de la descripción. */
   display: flex;
   flex-direction: column;
   gap: 2.25rem;
 }
 
-.instalaciones-right {
-  display: flex;
-  flex-direction: column;
-  gap: 2.75rem;
-  align-self: start;
-  padding-top: 0;
+.facility-card {
+  min-width: 0;
 }
 
-.instalaciones-right > div:last-child {
-  transform: none;
-  margin-top: -0.5rem;
+.facility-coworking {
+  grid-area: coworking;
+}
+
+.facility-entrada {
+  grid-area: entrada;
+}
+
+.facility-informatica {
+  grid-area: informatica;
 }
 
 .facility-img {
+  display: block;
   width: 100%;
-  height: 360px;
-  max-height: 360px;
-  object-fit: cover;
+  height: auto;
   background-color: transparent;
-  border-radius: var(--border-radius);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-.instalaciones-left .facility-img,
-.instalaciones-right .facility-img {
-  height: 360px;
-  max-height: 360px;
+.facility-entrada .facility-title,
+.facility-informatica .facility-title {
+  min-height: 1.3em;
+  margin-bottom: 0.35em;
 }
 
-.instalaciones-left > div,
-.instalaciones-right > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.instalaciones-left .facility-title,
-.instalaciones-right .facility-title {
-  min-height: 48px;
-}
-
-@media (max-width: 950px) {
-  .facility-img {
-    height: auto;
-    max-height: 420px;
-  }
-
-  .centro-section .image-card img,
-  .servicios-entorno-section .image-card img {
-    height: auto;
-    max-height: 420px;
-  }
-
-  .instalaciones-right {
-    padding-top: 0;
-  }
-
-  .instalaciones-right > div:last-child {
-    margin-top: 0;
-  }
+.facility-entrada .facility-img,
+.facility-informatica .facility-img {
+  aspect-ratio: 2.2 / 1;
+  object-fit: cover;
 }
 
 @media (max-width: 950px) {
   .instalaciones-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    /* En pantallas estrechas, Grid conserva el orden y apila las tarjetas. */
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "description"
+      "entrada"
+      "informatica"
+      "coworking";
+    row-gap: 2.5rem;
   }
 }

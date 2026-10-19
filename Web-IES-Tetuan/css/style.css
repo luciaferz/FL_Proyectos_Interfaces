@@ -49,6 +49,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   min-height: 100vh;
+  /* Flexbox en columna mantiene el pie al final incluso si hay poco contenido. */
   display: flex;
   flex-direction: column;
 }
@@ -68,6 +69,7 @@ body {
   max-width: 1800px; /* Aprovecha mejor el ancho del prototipo */
   width: 100%;
   margin: 0 auto;
+  /* Flexbox distribuye la identidad del centro y la navegación en la cabecera. */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,6 +81,7 @@ body {
   gap: 1.25rem;
   text-decoration: none;
   color: var(--color-cream-header);
+  max-width: 100%;
 }
 
 .brand-logo-box {
@@ -100,6 +103,7 @@ body {
 
 /* Título de la cabecera en color crema y fuente Beau */
 .brand-title {
+  min-width: 0;
   font-family: var(--font-beau);
   font-size: 24px;
   font-weight: 400;
@@ -119,9 +123,6 @@ body {
   font-family: var(--font-beau);
   font-size: 26px;
   font-weight: 400;
-  /* Transición CSS: suaviza cualquier cambio de opacidad al interactuar
-     con los enlaces del menú. No utiliza JavaScript. */
-  transition: opacity 0.2s ease;
 }
 
 .nav-link:hover,
@@ -168,7 +169,7 @@ main {
 }
 
 /* Subtítulos en azul claro/acero — TIPOGRAFÍA BEAU — 36 px */
-.sub-heading, h3.sub-heading, .facility-title, .project-title-beau, .blue-beau-title {
+.facility-title {
   font-family: var(--font-beau);
   font-size: 36px;
   color: var(--color-steel-blue);
@@ -178,7 +179,7 @@ main {
 }
 
 /* Frases bajo los títulos en azul claro/acero — TIPOGRAFÍA BEAU — 28 px */
-.section-subtitle, .lead-phrase, .project-subtitle-beau {
+.section-subtitle {
   font-family: var(--font-beau);
   font-size: 28px;
   color: #1272a8;
@@ -188,7 +189,7 @@ main {
 }
 
 /* Texto general — Gravidis Regular — 18 px (Sin negritas) */
-p, li, span, td, div, .text-general {
+p, li, span, td, div {
   font-family: var(--font-gravidis);
   font-size: 18px;
   font-weight: 400;
@@ -197,11 +198,7 @@ p, li, span, td, div, .text-general {
 }
 
 .highlight-text {
-  color: #1272a8 !important;
-}
-
-strong, b {
-  font-weight: 400;
+  color: #1272a8;
 }
 
 a {
@@ -254,8 +251,7 @@ a {
   margin: 0 auto;
 }
 
-.footer-container p,
-.footer-container span {
+.footer-container p {
   font-family: var(--font-beau);
   font-size: 18px;
   font-weight: 400;
@@ -264,8 +260,9 @@ a {
 
 /* Distribución general del contenido en dos columnas */
 .two-columns {
+  /* Grid mantiene dos columnas de igual ancho y evita que el contenido desborde. */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3.5rem; /* Separación equilibrada entre columnas */
   align-items: start;
   margin-bottom: 4.5rem;
@@ -282,7 +279,7 @@ a {
 
   .two-columns {
     /* CSS Grid cambia a una sola columna para adaptar el contenido al móvil. */
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
   }
 
@@ -290,11 +287,11 @@ a {
     font-size: 34px;
   }
 
-  .sub-heading, .facility-title, .blue-beau-title {
+  .facility-title {
     font-size: 28px;
   }
 
-  .section-subtitle, .lead-phrase {
+  .section-subtitle {
     font-size: 22px;
   }
 
@@ -305,5 +302,39 @@ a {
   .cta-container {
     /* Flexbox centra el botón en pantallas estrechas. */
     justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding-block: 1rem;
+  }
+
+  .brand-container {
+    gap: 0.75rem;
+  }
+
+  .brand-title {
+    font-size: clamp(1rem, 4.8vw, 1.25rem);
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    font-size: clamp(1.1rem, 5.5vw, 1.375rem);
+  }
+
+  main {
+    padding: 2rem clamp(1rem, 5vw, 1.5rem) 3.5rem;
+  }
+
+  .btn-primary {
+    max-width: 100%;
+    padding-inline: clamp(1rem, 6vw, 1.75rem);
+    text-align: center;
   }
 }
